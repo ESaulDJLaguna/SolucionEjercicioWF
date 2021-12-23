@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SolucionEjercicioWF
+namespace SolucionEjercicioWF.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class ListaClientes : UserControl
     {
-        public Form1()
+        public ListaClientes()
         {
             InitializeComponent();
         }
