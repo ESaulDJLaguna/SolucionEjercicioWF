@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,36 @@ namespace SolucionEjercicioWF.Logica
                 e.Handled = true;
             }
             return null;
+        }
+        public static void DiseñoDtv(ref DataGridView Listado)
+        {
+            // AutoSizeColumnsMode establece cómo se verán los anchos de las columnas, 'AllCells' indica que se ajustará el contenido al ancho de la celda
+            Listado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            // Color de fondo del DataGridView
+            Listado.BackgroundColor = Color.FromArgb(29, 29, 29);
+            // Inhabilita el estilo por defecto de los encabezados
+            Listado.EnableHeadersVisualStyles = false;
+            // Elimina los bordes del DataGridView
+            Listado.BorderStyle = BorderStyle.None;
+            // Elimina los bordes de las celdas
+            Listado.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            // Elimina los bordes de las columnas
+            Listado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            // Elimina el triángulo del lado izquierdo
+            Listado.RowHeadersVisible = false;
+            // UN 'DataGridViewCellStyle' REPRESENTA EL FORMATO Y ESTILO APLICADO A LAS CELDAS INDIVIDUALES DE UN 'DataGridView'
+            // Este DataGridViewCellStyle representa una celda cualquiera, pero la pensaremos para darle estilos a la cabecera
+            DataGridViewCellStyle cabecera = new DataGridViewCellStyle
+            {
+                // Cambia el color de fondo de la cabecera
+                BackColor = Color.FromArgb(29, 29, 29),
+                // Cambia el color de la letra de la cabecera
+                ForeColor = Color.White,
+                // Cambia la fuente de la cabecera, fuente: Segoe UI; tamaño: 10, Negrita
+                Font = new Font("Segoe UI", 10, FontStyle.Bold)
+            };
+            // Establece los estilos definidos a la cabecera del objeto DataGridView
+            Listado.ColumnHeadersDefaultCellStyle = cabecera;
         }
     }
 }

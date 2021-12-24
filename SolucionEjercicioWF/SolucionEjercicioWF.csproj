@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="Datos\CONEXIONMAESTRA.cs" />
     <Compile Include="Datos\DArticulos.cs" />
+    <Compile Include="Datos\DClientes.cs" />
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\LArticulos.cs" />
+    <Compile Include="Logica\LClientes.cs" />
     <Compile Include="Presentacion\Bodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +104,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\articulos.png" />
   </ItemGroup>
@@ -117,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\foto %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
