@@ -87,6 +87,7 @@ namespace SolucionEjercicioWF.Presentacion
                 PanelCambiaContraseña.Visible = false;
                 BtnArticulosCliente.Enabled = true;
                 BtnCarrito.Enabled = true;
+                BtnCerrarSesionCliente.Enabled = true;
             }
         }
 
