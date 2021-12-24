@@ -20,6 +20,7 @@ namespace SolucionEjercicioWF.Presentacion
         }
 
         int idCliente;
+        private string contraseña;
 
         private void BtnAddCliente_Click(object sender, EventArgs e)
         {
@@ -138,6 +139,7 @@ namespace SolucionEjercicioWF.Presentacion
                 TxtApellidos.Text = DgvListadoClientes.SelectedCells[4].Value.ToString();
                 TxtDireccion.Text = DgvListadoClientes.SelectedCells[5].Value.ToString();
                 TxtUsr.Text = DgvListadoClientes.SelectedCells[6].Value.ToString();
+                contraseña = DgvListadoClientes.SelectedCells[7].Value.ToString();
             }
             else
             {
@@ -187,6 +189,7 @@ namespace SolucionEjercicioWF.Presentacion
             parametros.apellidos = TxtApellidos.Text;
             parametros.direccion = TxtDireccion.Text;
             parametros.usuario = TxtUsr.Text;
+            parametros.contraseña = contraseña;
             if (funcion.EditarCliente(parametros))
             {
                 MessageBox.Show("El cliente se editó correctamente.");

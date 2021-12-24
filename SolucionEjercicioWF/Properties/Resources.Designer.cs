@@ -73,6 +73,16 @@ namespace SolucionEjercicioWF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anadir_al_carrito {
+            get {
+                object obj = ResourceManager.GetObject("anadir-al-carrito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap articulos {
             get {
                 object obj = ResourceManager.GetObject("articulos", resourceCulture);
@@ -86,6 +96,16 @@ namespace SolucionEjercicioWF.Properties {
         internal static System.Drawing.Bitmap azul {
             get {
                 object obj = ResourceManager.GetObject("azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerrar_sesion {
+            get {
+                object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +153,16 @@ namespace SolucionEjercicioWF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap metodo_de_pago {
+            get {
+                object obj = ResourceManager.GetObject("metodo-de-pago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap naranja {
             get {
                 object obj = ResourceManager.GetObject("naranja", resourceCulture);
@@ -146,6 +176,16 @@ namespace SolucionEjercicioWF.Properties {
         internal static System.Drawing.Bitmap objetivo {
             get {
                 object obj = ResourceManager.GetObject("objetivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rojo {
+            get {
+                object obj = ResourceManager.GetObject("Rojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

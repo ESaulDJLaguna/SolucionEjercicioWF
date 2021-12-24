@@ -30,8 +30,6 @@ namespace SolucionEjercicioWF.Presentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bodega));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnTiendas = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -42,34 +40,16 @@ namespace SolucionEjercicioWF.Presentacion
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PanelGeneral = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnCerrarSesionBodega = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1190, 73);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1190, 73);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BODEGA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BtnCerrarSesionBodega);
             this.panel2.Controls.Add(this.BtnTiendas);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.BtnClientes);
@@ -183,7 +163,47 @@ namespace SolucionEjercicioWF.Presentacion
             this.PanelGeneral.Size = new System.Drawing.Size(944, 470);
             this.PanelGeneral.TabIndex = 2;
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1190, 73);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "BODEGA";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1190, 73);
+            this.panel1.TabIndex = 0;
+            // 
+            // BtnCerrarSesionBodega
+            // 
+            this.BtnCerrarSesionBodega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrarSesionBodega.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnCerrarSesionBodega.FlatAppearance.BorderSize = 0;
+            this.BtnCerrarSesionBodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrarSesionBodega.Image = global::SolucionEjercicioWF.Properties.Resources.cerrar_sesion;
+            this.BtnCerrarSesionBodega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCerrarSesionBodega.Location = new System.Drawing.Point(10, 394);
+            this.BtnCerrarSesionBodega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCerrarSesionBodega.Name = "BtnCerrarSesionBodega";
+            this.BtnCerrarSesionBodega.Size = new System.Drawing.Size(226, 76);
+            this.BtnCerrarSesionBodega.TabIndex = 7;
+            this.BtnCerrarSesionBodega.Text = "Cerrar Sesión";
+            this.BtnCerrarSesionBodega.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCerrarSesionBodega.UseVisualStyleBackColor = true;
+            this.BtnCerrarSesionBodega.Click += new System.EventHandler(this.BtnCerrarSesionBodega_Click);
+            // 
+            // Bodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -195,20 +215,17 @@ namespace SolucionEjercicioWF.Presentacion
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "Bodega";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnArticulos;
         private System.Windows.Forms.Panel panel3;
@@ -219,6 +236,9 @@ namespace SolucionEjercicioWF.Presentacion
         private System.Windows.Forms.Button BtnTiendas;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel PanelGeneral;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnCerrarSesionBodega;
     }
 }
 

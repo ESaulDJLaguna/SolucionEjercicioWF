@@ -66,6 +66,7 @@
     <Compile Include="Datos\DClientes.cs" />
     <Compile Include="Datos\DTiendas.cs" />
     <Compile Include="Logica\Bases.cs" />
+    <Compile Include="Logica\Carrito.cs" />
     <Compile Include="Logica\LArticulos.cs" />
     <Compile Include="Logica\LClientes.cs" />
     <Compile Include="Logica\LTiendas.cs" />
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="Presentacion\ListaArticulos.Designer.cs">
       <DependentUpon>ListaArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ListaArticulosCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ListaArticulosCliente.Designer.cs">
+      <DependentUpon>ListaArticulosCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ListaClientes.cs">
       <SubType>UserControl</SubType>
@@ -111,13 +118,25 @@
     <Compile Include="Presentacion\Tienda.Designer.cs">
       <DependentUpon>Tienda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\VerCarritoCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\VerCarritoCliente.Designer.cs">
+      <DependentUpon>VerCarritoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Bodega.resx">
       <DependentUpon>Bodega.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ListaArticulos.resx">
       <DependentUpon>ListaArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ListaArticulosCliente.resx">
+      <DependentUpon>ListaArticulosCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ListaClientes.resx">
       <DependentUpon>ListaClientes.cs</DependentUpon>
@@ -127,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\VerCarritoCliente.resx">
+      <DependentUpon>VerCarritoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +217,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir-al-carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metodo-de-pago.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,5 +33,12 @@ namespace SolucionEjercicioWF.Presentacion
             control.Dock = DockStyle.Fill;
             PanelGeneral.Controls.Add(control);
         }
+
+        private void BtnCerrarSesionBodega_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login frm = new Login();
+            frm.ShowDialog();
+        }
     }
 }

@@ -18,8 +18,8 @@ namespace SolucionEjercicioWF.Presentacion
             InitializeComponent();
         }
 
-        private DataTable infoUsr = new DataTable();
-        DataTable tiendas = new DataTable();
+        public static DataTable userActual = new DataTable();
+        public static DataTable tiendaActual = new DataTable();
 
         private void BtnBodega_Click(object sender, EventArgs e)
         {
@@ -62,11 +62,11 @@ namespace SolucionEjercicioWF.Presentacion
             if(ComprobarDatosInicioSesion())
             {
                 DClientes funcion = new DClientes();
-                infoUsr.Clear();
-                funcion.BuscarSiClienteExiste(ref infoUsr, TxtUser.Text);
+                userActual.Clear();
+                funcion.BuscarSiClienteExiste(ref userActual, TxtUser.Text);
                 if(UsuarioExiste())
                 {
-                    string passwrd = (infoUsr.Rows[0]["contraseña"].ToString());
+                    string passwrd = (userActual.Rows[0]["contraseña"].ToString());
                     if(passwrd == TxtContraseña.Text)
                     {
                         LimpiarTxtBox();
@@ -87,7 +87,7 @@ namespace SolucionEjercicioWF.Presentacion
         }
         private bool UsuarioExiste()
         {
-            if (infoUsr.Rows.Count == 1)
+            if (userActual.Rows.Count == 1)
             {
                 return true;
             }
@@ -128,10 +128,11 @@ namespace SolucionEjercicioWF.Presentacion
         private void Login_Load(object sender, EventArgs e)
         {
             DTiendas funcion = new DTiendas();
-            funcion.ObtenerTiendas(ref tiendas);
-            for (int i = 0; i < tiendas.Rows.Count; i++)
+            tiendaActual.Clear();
+            funcion.ObtenerTiendas(ref tiendaActual);
+            for (int i = 0; i < tiendaActual.Rows.Count; i++)
             {
-                CbxSucursales.Items.Add(tiendas.Rows[i]["sucursal"]);
+                CbxSucursales.Items.Add(tiendaActual.Rows[i]["sucursal"]);
             }
         }
 

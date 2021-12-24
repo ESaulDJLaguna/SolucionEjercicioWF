@@ -68,6 +68,7 @@ namespace SolucionEjercicioWF.Datos
                 cmd.Parameters.AddWithValue("@Apellidos", parametros.apellidos);
                 cmd.Parameters.AddWithValue("@Direccion", parametros.direccion);
                 cmd.Parameters.AddWithValue("@Usuario", parametros.usuario);
+                cmd.Parameters.AddWithValue("@Contraseña", parametros.contraseña);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -107,7 +108,7 @@ namespace SolucionEjercicioWF.Datos
             try
             {
                 CONEXIONMAESTRA.Abrir();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT id_cliente, usuario, contraseña FROM Clientes WHERE usuario = '" + user + "'", CONEXIONMAESTRA.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Clientes WHERE usuario = '" + user + "'", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
                 return true;
             }
