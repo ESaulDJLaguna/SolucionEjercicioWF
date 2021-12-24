@@ -51,94 +51,6 @@ namespace SolucionEjercicioWF.Presentacion
             }    
         }
 
-        private void GuardaClienteEnBD()
-        {
-            LClientes parametros = new LClientes();
-            DClientes funcion = new DClientes();
-            parametros.nombre = TxtNombres.Text;
-            parametros.apellidos = TxtApellidos.Text;
-            parametros.direccion = TxtDireccion.Text;
-            parametros.usuario = TxtUsr.Text;
-            parametros.contraseña = "1";
-            if (funcion.InsertarCliente(parametros))
-            {
-                MessageBox.Show("El cliente se guardó correctamente.");
-                VisibilidadPaneles(true, false);
-                timer1.Start();
-            }
-        }
-
-        private void BtnCancelarCliente_Click(object sender, EventArgs e)
-        {
-            VisibilidadPaneles(true, false);
-        }
-
-        private void MostrarClientes()
-        {
-            DataTable dt = new DataTable();
-            DClientes funcion = new DClientes();
-            funcion.ObtenerClientes(ref dt);
-            DgvListadoClientes.DataSource = dt;
-            Bases.DiseñoDtv(ref DgvListadoClientes);
-            DgvListadoClientes.Columns[2].Visible = false;
-            DgvListadoClientes.Columns[7].Visible = false;
-        }
-
-        private void DgvListadoClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            CapturarIdCliente();
-            if (e.ColumnIndex == DgvListadoClientes.Columns["Editar"].Index)
-            {
-                VisibilidadPaneles(false, true, false, true);
-                BtnEditarCliente.Location = new Point(BtnGuardarCliente.Location.X, BtnGuardarCliente.Location.Y);
-                TxtNombres.Text = DgvListadoClientes.SelectedCells[3].Value.ToString();
-                TxtApellidos.Text = DgvListadoClientes.SelectedCells[4].Value.ToString();
-                TxtDireccion.Text = DgvListadoClientes.SelectedCells[5].Value.ToString();
-                TxtUsr.Text = DgvListadoClientes.SelectedCells[6].Value.ToString();
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("¿Desea eliminar este cliente?", "Eliminación de cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if(result == DialogResult.OK)
-                {
-                    EliminarClienteEnBD();
-                }
-            }
-        }
-
-        private void EliminarClienteEnBD()
-        {
-            DClientes funcion = new DClientes();
-            if (funcion.EliminarCliente(idCliente))
-            {
-                MessageBox.Show("El cliente se eliminó correctamente.");
-                timer1.Start();
-            }
-        }
-
-        private void EditarInfoCliente()
-        {
-            if(ValidaInfoCliente())
-            {
-                EditaClienteEnBD();
-            }
-        }
-        private void EditaClienteEnBD()
-        {
-            LClientes parametros = new LClientes();
-            DClientes funcion = new DClientes();
-            parametros.idCliente = idCliente;
-            parametros.nombre = TxtNombres.Text;
-            parametros.apellidos = TxtApellidos.Text;
-            parametros.direccion = TxtDireccion.Text;
-            parametros.usuario = TxtUsr.Text;
-            if (funcion.EditarCliente(parametros))
-            {
-                MessageBox.Show("El cliente se editó correctamente.");
-                VisibilidadPaneles(true, false);
-            }
-        }
-
         private bool ValidaInfoCliente()
         {
             if (!string.IsNullOrEmpty(TxtUsr.Text))
@@ -176,23 +88,110 @@ namespace SolucionEjercicioWF.Presentacion
             }
         }
 
-        private void CapturarIdCliente()
+        private void GuardaClienteEnBD()
         {
-            idCliente = Convert.ToInt32(DgvListadoClientes.SelectedCells[2].Value);
-        }
-
-        private void BtnEditarCliente_Click(object sender, EventArgs e)
-        {
-
-            EditarInfoCliente();
-            VisibilidadPaneles(true,false);
-            timer1.Start();
+            LClientes parametros = new LClientes();
+            DClientes funcion = new DClientes();
+            parametros.nombre = TxtNombres.Text;
+            parametros.apellidos = TxtApellidos.Text;
+            parametros.direccion = TxtDireccion.Text;
+            parametros.usuario = TxtUsr.Text;
+            parametros.contraseña = "1";
+            if (funcion.InsertarCliente(parametros))
+            {
+                MessageBox.Show("El cliente se guardó correctamente.");
+                VisibilidadPaneles(true, false);
+                timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             MostrarClientes();
             timer1.Stop();
+        }
+
+        private void MostrarClientes()
+        {
+            DataTable dt = new DataTable();
+            DClientes funcion = new DClientes();
+            funcion.ObtenerClientes(ref dt);
+            DgvListadoClientes.DataSource = dt;
+            Bases.DiseñoDtv(ref DgvListadoClientes);
+            DgvListadoClientes.Columns[2].Visible = false;
+            DgvListadoClientes.Columns[7].Visible = false;
+        }
+
+        private void BtnCancelarCliente_Click(object sender, EventArgs e)
+        {
+            VisibilidadPaneles(true, false);
+        }
+
+        private void DgvListadoClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CapturarIdCliente();
+            if (e.ColumnIndex == DgvListadoClientes.Columns["Editar"].Index)
+            {
+                VisibilidadPaneles(false, true, false, true);
+                BtnEditarCliente.Location = new Point(BtnGuardarCliente.Location.X, BtnGuardarCliente.Location.Y);
+                TxtNombres.Text = DgvListadoClientes.SelectedCells[3].Value.ToString();
+                TxtApellidos.Text = DgvListadoClientes.SelectedCells[4].Value.ToString();
+                TxtDireccion.Text = DgvListadoClientes.SelectedCells[5].Value.ToString();
+                TxtUsr.Text = DgvListadoClientes.SelectedCells[6].Value.ToString();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Desea eliminar este cliente?", "Eliminación de cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(result == DialogResult.OK)
+                {
+                    EliminarClienteEnBD();
+                }
+            }
+        }
+
+        private void CapturarIdCliente()
+        {
+            idCliente = Convert.ToInt32(DgvListadoClientes.SelectedCells[2].Value);
+        }
+
+        private void EliminarClienteEnBD()
+        {
+            DClientes funcion = new DClientes();
+            if (funcion.EliminarCliente(idCliente))
+            {
+                MessageBox.Show("El cliente se eliminó correctamente.");
+                timer1.Start();
+            }
+        }
+
+        private void BtnEditarCliente_Click(object sender, EventArgs e)
+        {
+            EditarInfoCliente();
+            VisibilidadPaneles(true,false);
+            timer1.Start();
+        }
+
+        private void EditarInfoCliente()
+        {
+            if(ValidaInfoCliente())
+            {
+                EditaClienteEnBD();
+            }
+        }
+        private void EditaClienteEnBD()
+        {
+            LClientes parametros = new LClientes();
+            DClientes funcion = new DClientes();
+            parametros.idCliente = idCliente;
+            parametros.nombre = TxtNombres.Text;
+            parametros.apellidos = TxtApellidos.Text;
+            parametros.direccion = TxtDireccion.Text;
+            parametros.usuario = TxtUsr.Text;
+            if (funcion.EditarCliente(parametros))
+            {
+                MessageBox.Show("El cliente se editó correctamente.");
+                VisibilidadPaneles(true, false);
+            }
         }
     }
 }

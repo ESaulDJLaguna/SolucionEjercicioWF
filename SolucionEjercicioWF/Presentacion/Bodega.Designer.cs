@@ -33,7 +33,7 @@ namespace SolucionEjercicioWF
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnTiendas = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.BtnClientes = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -70,7 +70,7 @@ namespace SolucionEjercicioWF
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.BtnTiendas);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.BtnClientes);
             this.panel2.Controls.Add(this.panel6);
@@ -84,21 +84,22 @@ namespace SolucionEjercicioWF
             this.panel2.Size = new System.Drawing.Size(246, 470);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // BtnTiendas
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::SolucionEjercicioWF.Properties.Resources.tienda;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(10, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 76);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Lista de Tiendas";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnTiendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTiendas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTiendas.FlatAppearance.BorderSize = 0;
+            this.BtnTiendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTiendas.Image = global::SolucionEjercicioWF.Properties.Resources.tienda;
+            this.BtnTiendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTiendas.Location = new System.Drawing.Point(10, 182);
+            this.BtnTiendas.Name = "BtnTiendas";
+            this.BtnTiendas.Size = new System.Drawing.Size(226, 76);
+            this.BtnTiendas.TabIndex = 6;
+            this.BtnTiendas.Text = "Lista de Tiendas";
+            this.BtnTiendas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnTiendas.UseVisualStyleBackColor = true;
+            this.BtnTiendas.Click += new System.EventHandler(this.BtnTiendas_Click);
             // 
             // panel13
             // 
@@ -215,7 +216,7 @@ namespace SolucionEjercicioWF
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button BtnClientes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnTiendas;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel PanelGeneral;
     }

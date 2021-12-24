@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SolucionEjercicioWF.Presentacion;
 
@@ -30,6 +23,14 @@ namespace SolucionEjercicioWF
         {
             PanelGeneral.Controls.Clear();
             ListaClientes control = new ListaClientes();
+            control.Dock = DockStyle.Fill;
+            PanelGeneral.Controls.Add(control);
+        }
+
+        private void BtnTiendas_Click(object sender, EventArgs e)
+        {
+            PanelGeneral.Controls.Clear();
+            ListaTiendas control = new ListaTiendas();
             control.Dock = DockStyle.Fill;
             PanelGeneral.Controls.Add(control);
         }
