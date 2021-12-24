@@ -1,7 +1,7 @@
 ﻿
-namespace SolucionEjercicioWF
+namespace SolucionEjercicioWF.Presentacion
 {
-    partial class Form1
+    partial class Bodega
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@ namespace SolucionEjercicioWF
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bodega));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();

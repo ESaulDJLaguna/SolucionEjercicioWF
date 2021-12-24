@@ -101,5 +101,25 @@ namespace SolucionEjercicioWF.Datos
                 CONEXIONMAESTRA.Cerrar();
             }
         }
+
+        public bool BuscarSiClienteExiste(ref DataTable dt, string user)
+        {
+            try
+            {
+                CONEXIONMAESTRA.Abrir();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT id_cliente, usuario, contraseña FROM Clientes WHERE usuario = '" + user + "'", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.Cerrar();
+            }
+        }
     }
 }

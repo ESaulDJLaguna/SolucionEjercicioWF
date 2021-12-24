@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SolucionEjercicioWF.Presentacion;
 
 namespace SolucionEjercicioWF
 {
@@ -16,7 +17,16 @@ namespace SolucionEjercicioWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Login frm = new Login();
+            frm.FormClosed += Frm_FormClosed;
+            frm.ShowDialog();
+            Application.Run();
+        }
+
+        private static void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+            Application.Exit();
         }
     }
 }

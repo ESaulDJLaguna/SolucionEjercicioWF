@@ -118,8 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="foto (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foto (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="articulos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\articulos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iniciar-sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iniciar-sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="objetivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\objetivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tienda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tienda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,16 +145,10 @@
   <data name="agregar-archivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-archivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="articulos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\articulos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="foto (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\foto (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
