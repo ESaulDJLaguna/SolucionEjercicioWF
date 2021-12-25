@@ -94,6 +94,12 @@
     <Compile Include="Presentacion\ListaArticulosCliente.Designer.cs">
       <DependentUpon>ListaArticulosCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ListaArticulosTienda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ListaArticulosTienda.Designer.cs">
+      <DependentUpon>ListaArticulosTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ListaClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="Presentacion\VerCarritoCliente.Designer.cs">
       <DependentUpon>VerCarritoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\VerCarritoTienda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\VerCarritoTienda.Designer.cs">
+      <DependentUpon>VerCarritoTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Bodega.resx">
@@ -138,6 +150,9 @@
     <EmbeddedResource Include="Presentacion\ListaArticulosCliente.resx">
       <DependentUpon>ListaArticulosCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ListaArticulosTienda.resx">
+      <DependentUpon>ListaArticulosTienda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ListaClientes.resx">
       <DependentUpon>ListaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +162,14 @@
     <EmbeddedResource Include="Presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Tienda.resx">
+      <DependentUpon>Tienda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\VerCarritoCliente.resx">
       <DependentUpon>VerCarritoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\VerCarritoTienda.resx">
+      <DependentUpon>VerCarritoTienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

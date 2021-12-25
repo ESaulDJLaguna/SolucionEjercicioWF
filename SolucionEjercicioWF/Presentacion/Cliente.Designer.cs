@@ -37,6 +37,7 @@ namespace SolucionEjercicioWF.Presentacion
             this.label3 = new System.Windows.Forms.Label();
             this.TxtNewPssrd2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnActualizarPsswrd = new System.Windows.Forms.Button();
             this.TxtNewPssrd1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.margen2 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@ namespace SolucionEjercicioWF.Presentacion
             this.margen4 = new System.Windows.Forms.Panel();
             this.margen5 = new System.Windows.Forms.Panel();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
-            this.BtnActualizarPsswrd = new System.Windows.Forms.Button();
             this.BtnCerrarSesionCliente = new System.Windows.Forms.Button();
             this.BtnCarrito = new System.Windows.Forms.Button();
             this.BtnArticulosCliente = new System.Windows.Forms.Button();
@@ -130,6 +130,22 @@ namespace SolucionEjercicioWF.Presentacion
             this.label2.Text = "Nueva Contraseña:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BtnActualizarPsswrd
+            // 
+            this.BtnActualizarPsswrd.BackgroundImage = global::SolucionEjercicioWF.Properties.Resources.Rojo;
+            this.BtnActualizarPsswrd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnActualizarPsswrd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizarPsswrd.FlatAppearance.BorderSize = 0;
+            this.BtnActualizarPsswrd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizarPsswrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.BtnActualizarPsswrd.Location = new System.Drawing.Point(317, 304);
+            this.BtnActualizarPsswrd.Name = "BtnActualizarPsswrd";
+            this.BtnActualizarPsswrd.Size = new System.Drawing.Size(310, 72);
+            this.BtnActualizarPsswrd.TabIndex = 2;
+            this.BtnActualizarPsswrd.Text = "Actualizar Contraseña";
+            this.BtnActualizarPsswrd.UseVisualStyleBackColor = true;
+            this.BtnActualizarPsswrd.Click += new System.EventHandler(this.BtnActualizarPsswrd_Click);
+            // 
             // TxtNewPssrd1
             // 
             this.TxtNewPssrd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -201,22 +217,6 @@ namespace SolucionEjercicioWF.Presentacion
             this.PanelIzquierdo.Name = "PanelIzquierdo";
             this.PanelIzquierdo.Size = new System.Drawing.Size(246, 470);
             this.PanelIzquierdo.TabIndex = 2;
-            // 
-            // BtnActualizarPsswrd
-            // 
-            this.BtnActualizarPsswrd.BackgroundImage = global::SolucionEjercicioWF.Properties.Resources.Rojo;
-            this.BtnActualizarPsswrd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnActualizarPsswrd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnActualizarPsswrd.FlatAppearance.BorderSize = 0;
-            this.BtnActualizarPsswrd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnActualizarPsswrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.BtnActualizarPsswrd.Location = new System.Drawing.Point(317, 304);
-            this.BtnActualizarPsswrd.Name = "BtnActualizarPsswrd";
-            this.BtnActualizarPsswrd.Size = new System.Drawing.Size(310, 72);
-            this.BtnActualizarPsswrd.TabIndex = 2;
-            this.BtnActualizarPsswrd.Text = "Actualizar Contraseña";
-            this.BtnActualizarPsswrd.UseVisualStyleBackColor = true;
-            this.BtnActualizarPsswrd.Click += new System.EventHandler(this.BtnActualizarPsswrd_Click);
             // 
             // BtnCerrarSesionCliente
             // 

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace SolucionEjercicioWF.Presentacion
 {
-    public partial class ListaArticulosCliente : UserControl
+    public partial class ListaArticulosTienda : UserControl
     {
-        public ListaArticulosCliente()
+        public ListaArticulosTienda()
         {
             InitializeComponent();
         }
@@ -111,20 +111,21 @@ namespace SolucionEjercicioWF.Presentacion
         {
             cantidadArticulosSeleccionados = Convert.ToInt32(((TextBox)sender).Text);
         }
-
         private void Add_Click(object sender, EventArgs e)
         {
             string codigoRecuperado = ((Button)sender).Tag.ToString();
             int articulosAnteriores = 0;
 
-            if(cantidadArticulosSeleccionados == 0)
+            if (cantidadArticulosSeleccionados == 0)
             {
                 MessageBox.Show("Elige al menos un artículo de este tipo");
             }
             else
             {
+                //TODO... AGREGAR AL CARRITO DE COMPRAS
                 articulosTotal = ObtenArticulosTotal(codigoRecuperado);
                 articulosAnteriores += sumaSiYaExisteArticuloEnCarrito(codigoRecuperado);
+                //MessageBox.Show($"Agregados antes: {cantidadArticulosSeleccionados}");
                 if (cantidadArticulosSeleccionados + articulosAnteriores > articulosTotal)
                 {
                     MessageBox.Show($"No puedes elegir más de {articulosTotal} artículos");
@@ -132,6 +133,9 @@ namespace SolucionEjercicioWF.Presentacion
                 else
                 {
                     AgregaAlCarrito(codigoRecuperado, cantidadArticulosSeleccionados);
+                    //EditaStockArticulo(codigoRecuperado, nuevoStock);
+                    //RecorreCarrito();
+                    //MessageBox.Show($"Nuevo Stock: {nuevoStock}");
                 }
                 timer1.Start();
             }
@@ -154,21 +158,23 @@ namespace SolucionEjercicioWF.Presentacion
             int articuloExistente = 0;
             for (int i = 0; i < carrito.Count; i++)
             {
-                if(carrito[i].codigoArticulo == codigo)
+                if (carrito[i].codigoArticulo == codigo)
                 {
                     carrito[i].cantidad += cantidad;
                     articuloExistente++;
+                    //MessageBox.Show($"Incrementa viejo");
 
                 }
             }
-            if(articuloExistente == 0)
+            if (articuloExistente == 0)
             {
                 carrito.Add(new Carrito(codigo, cantidad));
+                //MessageBox.Show($"Agregado nuevo");
             }
             MessageBox.Show("Producto Agregado correctamente.");
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
             cantidadArticulosSeleccionados = 0;
             articulosTotal = 0;
@@ -177,6 +183,7 @@ namespace SolucionEjercicioWF.Presentacion
             timer1.Stop();
         }
 
+
         private int ObtenArticulosTotal(string codArticulo)
         {
             DataTable dt = new DataTable();
@@ -184,6 +191,5 @@ namespace SolucionEjercicioWF.Presentacion
             funcion.ObtenerInfoArticuloSeleccionado(ref dt, codArticulo);
             return Convert.ToInt32(dt.Rows[0]["stock"].ToString());
         }
-
     }
 }
