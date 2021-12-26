@@ -87,6 +87,7 @@ namespace SolucionEjercicioWF.Presentacion
                         flowLayoutPanel1.Controls.Add(panel);
                     }
                 }
+                LblTotalPagar.Text = totalPagar.ToString();
             }
             LblTotalPagar.Text = totalPagar.ToString();
         }
@@ -95,11 +96,15 @@ namespace SolucionEjercicioWF.Presentacion
         {
             string productoEliminar = ((Button)sender).Tag.ToString();
             Carrito eliminar = null;
+
             foreach (Carrito producto in c)
             {
                 if (producto.codigoArticulo == productoEliminar)
                 {
                     eliminar = producto;
+                    decimal precio = ObtenerPrecioArticuloActua(producto.codigoArticulo);
+                    decimal descontar = producto.cantidad * precio;
+                    totalPagar -= descontar;
                 }
             }
             c.Remove(eliminar);
@@ -108,22 +113,26 @@ namespace SolucionEjercicioWF.Presentacion
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            totalPagar = 0;
             DibujarCarrito();
             timer1.Stop();
         }
 
         private void BtnPagar_Click_1(object sender, EventArgs e)
         {
-            int articulosTotal;
-            foreach (Carrito item in c)
+            if(totalPagar != 0)
             {
-                GuardaCompraEnBD(item.codigoArticulo, idSucursal, item.cantidad);
-                articulosTotal = ObtenArticulosTotal(item.codigoArticulo);
-                ActualizaStockEnBD(item.codigoArticulo, articulosTotal - item.cantidad);
+                int articulosTotal;
+                foreach (Carrito item in c)
+                {
+                    GuardaCompraEnBD(item.codigoArticulo, idSucursal, item.cantidad);
+                    articulosTotal = ObtenArticulosTotal(item.codigoArticulo);
+                    ActualizaStockEnBD(item.codigoArticulo, articulosTotal - item.cantidad);
+                }
+                MessageBox.Show("Pago Exitoso");
+                c.Clear();
+                timer1.Start();
             }
-            MessageBox.Show("Pago Exitoso");
-            c.Clear();
-            timer1.Start();
         }
 
         private void GuardaCompraEnBD(string codArticulo, int idSucursal, int cantidad)
@@ -154,6 +163,14 @@ namespace SolucionEjercicioWF.Presentacion
             DArticulos funcion = new DArticulos();
             funcion.ObtenerInfoArticuloSeleccionado(ref dt, codArticulo);
             return Convert.ToInt32(dt.Rows[0]["stock"].ToString());
+        }
+
+        private decimal ObtenerPrecioArticuloActua(string codArticulo)
+        {
+            DataTable dt = new DataTable();
+            DArticulos funcion = new DArticulos();
+            funcion.ObtenerInfoArticuloSeleccionado(ref dt, codArticulo);
+            return Convert.ToDecimal(dt.Rows[0]["precio"].ToString());
         }
 
         private void ActualizaStockEnBD(string codArticulo, int nuevoStock)

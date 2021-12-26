@@ -86,19 +86,24 @@ namespace SolucionEjercicioWF.Presentacion
                         flowLayoutPanel1.Controls.Add(panel);
                     }
                 }
+                LblTotalPagar.Text = totalPagar.ToString();
             }
-            LblTotalPagar.Text = totalPagar.ToString();
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
             string productoEliminar = ((Button)sender).Tag.ToString();
             Carrito eliminar = null;
+
             foreach (Carrito producto in c)
             {
                 if(producto.codigoArticulo == productoEliminar)
                 {
                     eliminar = producto;
+                    decimal precio = ObtenerPrecioArticuloActua(producto.codigoArticulo);
+                    decimal descontar = producto.cantidad*precio;
+                    totalPagar -= descontar;
+
                 }
             }
             c.Remove(eliminar);
@@ -108,23 +113,27 @@ namespace SolucionEjercicioWF.Presentacion
         private void timer1_Tick(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            totalPagar = 0;
             DibujarCarrito();
             timer1.Stop();
         }
 
         private void BtnPagar_Click(object sender, EventArgs e)
         {
-            int idCliente = Cliente.idClienteActual;
-            int articulosTotal;
-            foreach (Carrito item in c)
+            if(totalPagar != 0)
             {
-                GuardaCompraEnBD(idCliente, item.codigoArticulo, item.cantidad);
-                articulosTotal = ObtenArticulosTotal(item.codigoArticulo);
-                ActualizaStockEnBD(item.codigoArticulo, articulosTotal - item.cantidad);
+                int idCliente = Cliente.idClienteActual;
+                int articulosTotal;
+                foreach (Carrito item in c)
+                {
+                    GuardaCompraEnBD(idCliente, item.codigoArticulo, item.cantidad);
+                    articulosTotal = ObtenArticulosTotal(item.codigoArticulo);
+                    ActualizaStockEnBD(item.codigoArticulo, articulosTotal - item.cantidad);
+                }
+                MessageBox.Show("Pago Exitoso");
+                c.Clear();
+                timer1.Start();
             }
-            MessageBox.Show("Pago Exitoso");
-            c.Clear();
-            timer1.Start();
         }
 
         private int ObtenArticulosTotal(string codArticulo)
@@ -133,6 +142,14 @@ namespace SolucionEjercicioWF.Presentacion
             DArticulos funcion = new DArticulos();
             funcion.ObtenerInfoArticuloSeleccionado(ref dt, codArticulo);
             return Convert.ToInt32(dt.Rows[0]["stock"].ToString());
+        }
+
+        private decimal ObtenerPrecioArticuloActua(string codArticulo)
+        {
+            DataTable dt = new DataTable();
+            DArticulos funcion = new DArticulos();
+            funcion.ObtenerInfoArticuloSeleccionado(ref dt, codArticulo);
+            return Convert.ToDecimal(dt.Rows[0]["precio"].ToString());
         }
 
         private void ActualizaStockEnBD(string codArticulo, int nuevoStock)
